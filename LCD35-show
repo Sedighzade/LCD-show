@@ -21,6 +21,12 @@ sudo echo "dtparam=i2c_arm=on" >> ./boot/config.txt.bak
 sudo echo "dtparam=spi=on" >> ./boot/config.txt.bak
 sudo echo "enable_uart=1" >> ./boot/config.txt.bak
 sudo echo "dtoverlay=tft35a:rotate=90" >> ./boot/config.txt.bak
+sudo echo "dtoverlay=sdtweak,overclock_50=100" >> ./boot/config.txt.bak
+sudo echo "boot_delay=0" >> ./boot/config.txt.bak
+sudo echo "force_turbo=1" >> ./boot/config.txt.bak
+sudo echo "disable_splash=1" >> ./boot/config.txt.bak
+sudo echo "dtoverlay=disable-bt" >> ./boot/config.txt.bak
+sudo echo "dtoverlay=spi1-3cs,cs0_pin=5,cs1_pin=6,cs0_pin=16" >> ./boot/config.txt.bak
 sudo cp -rf ./boot/config.txt.bak /boot/config.txt
 
 sudo cp -rf ./usr/99-calibration.conf-35-90  /etc/X11/xorg.conf.d/99-calibration.conf
